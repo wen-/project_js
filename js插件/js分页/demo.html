@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link type="text/css" rel="stylesheet" href="page/css/style.css" />
+</head>
+<body>
+<!--分页-->
+<div class="pagebox">
+
+    <div id="pagebox" class="jPaginate" style="padding-left: 77px;">
+    
+    </div>
+    
+</div>
+<script type="text/javascript" src="../JQ版本/jquery-1.9.1.min.js"></script> 
+<script type="text/javascript" src="page/jquery.paginate.js"></script> 
+<script type="text/javascript">
+$("#pagebox").paginate({
+	count 		: Math.ceil(112/10),
+	start 		: 1,
+	display     : 10,
+	border					: true,
+	border_color			: '#BEF8B8',
+	text_color  			: '#68BA64',
+	background_color    	: '#E3F2E1',
+	border_hover_color		: '#68BA64',
+	text_hover_color  		: 'black',
+	background_hover_color	: '#fff',
+	images					: false,
+	mouse					: 'press',
+	onChange     			: function(page){
+		currentPage = page;
+		var jumpPage = {
+			"pageindex":page,//页码，从1开始
+			"pagesize":10 //页大小
+		};
+		//gPost(address.appList,jumpPage,fn_appListDatas);
+	}
+});
+</script>
+</body>
+</html>

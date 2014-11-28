@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>IOS文档</title>
+<script type="text/javascript" src="copy/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="copy/jquery.zclip.min.js"></script>
+<style>
+body{
+	color:#333;
+	font-size:14px;
+}
+dl{
+	padding-left:2em;
+	margin-bottom:1em;
+}
+dt{
+	margin-bottom:1em;
+	font-weight:bold;
+}
+dd{
+	padding-left:2em;
+	margin-left:0;
+	margin-bottom:1em;
+	line-height:1.5em;
+}
+pre{
+	overflow:auto;
+	padding:3em;
+	background-color:#efefef;
+	border-radius:4px;
+	margin-right:2em;
+}
+.copy{
+	cursor:pointer;
+	width:50px;
+	position: absolute;
+	top: 0;
+	left: 2em;
+	background-color: #fff;
+	padding: 4px;
+	border: solid 2px #ccc;
+}
+.copy img{
+	height: 20px;
+	vertical-align: middle;
+	border: none;
+	margin: -5px 3px 0 0;
+}
+</style>
+</head>
+<body>
+<dl>
+	<dt>8、客服群组列表</dt>
+    <dd style="position:relative;">
+    <div class='copy abc' style="position: absolute;top: 0;left: 2em;background-color: #fff;padding: 4px;border: solid 2px #ccc;"><img src="copyico.png" style="height: 20px;vertical-align: middle;border: none;margin: -5px 3px 0 0;" alt="" />复制</div>
+        <pre>
+NSArray *businessKeys=[NSArray arrayWithObjects:KIAI_Business_Default, nil];
+[InAppIMSDK enterServiceGroupList:businessKeys navigationController:self animated:YES];
+        </pre>
+    </dd>
+</dl>
+
+<script type="text/javascript">
+$(function(){
+	//放到服务器才可以复制
+	$(".copy").zclip({
+		path: "copy/ZeroClipboard.swf",
+		copy: function(){
+			return $(this).next().html();
+		},
+	});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>乐吾官网首页</title>
+<style type="text/css">
+#statisticsMenu{
+	padding:10px 0;
+	background-color:#efefef;
+}
+#statisticsMenu a{
+	color:#6a6a6a;
+	display:block;
+	line-height:30px;
+}
+#statisticsMenu li{
+	padding-left:20px;
+}
+#statisticsMenu ul{
+	display:none;
+}
+#statisticsMenu li.parent{
+	background:url(arr1.gif) no-repeat 6px 10px;
+}
+#statisticsMenu li.expanded{
+	background:url(arr2.gif) no-repeat 6px 10px;
+}
+#statisticsMenu a.menuColor{
+	color:#00b2d8;
+}
+.statisticsInfo_title{
+	border-bottom: solid 1px #ADD8E1;
+	padding-bottom: 5px;	
+}
+.statisticsInfo_title h1{
+	font-size:20px;
+}
+.chatroom_details{
+	width:740px;
+}
+</style>
+</head>
+<body>
+<section class="section">
+	<div class="chatroombox">
+        <div class="chatroombox_m clearfix">
+        	<div class="chatroom_menu lfloat">
+            	<div id="statisticsMenu" class="menuTree">
+                    <ul>
+                        <li class="parent expanded"><a href="#">设备系统</a>
+                            <ul style="display:block;">
+                                <li class="parent expanded"><a href="#">IOS</a>
+                                	<ul style="display:block;">
+                                    	<li class="child"><a href="tjinfo/iossdkversion.html" class="menuColor">SDK版本号</a></li>
+                                    	<li class="child"><a href="tjinfo/iososversion.html">OS版本</a></li>
+                                    	<li class="child"><a href="tjinfo/iospushnum.html">支持PUSH数量</a></li>
+                                    	<li class="child"><a href="tjinfo/iosmodel.html">机型</a></li>
+                                    	<li class="child"><a href="tjinfo/iosratio.html">分辨率</a></li>
+                                    </ul>
+                                </li>
+                                <li class="parent"><a href="#">ANDRIOD</a>
+                                	<ul>
+                                    	<li class="child"><a href="tjinfo/androidsdkversion.html">SDK版本号</a></li>
+                                    	<li class="child"><a href="tjinfo/androidosversion.html">OS版本</a></li>
+                                    	<li class="child"><a href="tjinfo/androidmodel.html">机型</a></li>
+                                    	<li class="child"><a href="tjinfo/androidratio.html">分辨率</a></li>
+                                    </ul>
+                                </li>
+                                <li class="child"><a href="tjinfo/address.html">地理位置分布</a></li>
+                                <li class="child"><a href="tjinfo/network.html">最后网络状态</a></li>
+                            </ul>
+                        </li>
+                        <li class="parent"><a href="#">用户统计</a>
+                            <ul>
+                                <li class="child"><a href="tjinfo/platform.html">平台</a></li>
+                                <li class="child"><a href="tjinfo/sex.html">性别</a></li>
+                                <li class="child"><a href="tjinfo/regnum.html">每天用户注册数量</a></li>
+                                <li class="child"><a href="tjinfo/friendnum.html">每天好友关系添加数量</a></li>
+                            </ul>
+                        </li>
+                        <li class="parent"><a href="#">群组/聊天室统计</a>
+                            <ul>
+                                <li class="parent"><a href="#">聊天室</a>
+                                	<ul>
+                                    	<li class="child"><a href="tjinfo/roomtype.html">聊天室类型</a></li>
+                                    	<li class="child"><a href="tjinfo/roomBusinessType.html">聊天室业务类型</a></li>
+                                    	<li class="child"><a href="tjinfo/roomaddnum.html">每天创建数量</a></li>
+                                    </ul>
+                                </li>
+                                <li class="parent"><a href="#">群组</a>
+                                	<ul>
+                                    	<li class="child"><a href="tjinfo/grouptype.html">群组类型</a></li>
+                                    	<li class="child"><a href="tjinfo/groupBusinessType.html">群组业务类型</a></li>
+                                    	<li class="child"><a href="tjinfo/groupaddnum.html">每天创建数量</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript" src="../JQ版本/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="jquery.menutree.js"></script>
+    
+<script>
+$(function() {
+	$('#statisticsMenu').menuTree({
+		//这里配置参数
+		},function(elem){
+		//这里是点击叶子项的回调
+		elem.parents("#statisticsMenu").find("a").removeClass("menuColor");
+		elem.addClass("menuColor");
+	});
+});
+</script>
+
+</body>
+</html>
