@@ -1,0 +1,44 @@
+@charset "utf-8";
+/* CSS Document */
+.ui-icon-circle-minus {
+	background-position: -16px -192px;
+}
+.ui-icon-minusthick {
+	background-position: -64px -128px;
+}
+.ui-icon-circle-plus {
+	background-position: 0 -192px;
+}
+.ui-icon-clipboard {
+	background-position: -160px -128px;
+}
+.ui-icon-folder-collapsed {
+	background-position: 0 -96px;
+}
+.ui-icon-folder-collapsed {
+	background-position: 0 -96px;
+}
+.ui-icon-folder-open {
+	background-position: -16px -96px;
+}
+.ui-icon-document {
+	background-position: -32px -96px;
+}
+
+.ui-icon, .ui-widget-content .ui-icon {
+	background-image: url("../images/ui-icons_222222_256x240.png");
+}
+.ui-icon {
+	height: 16px;
+	width: 16px;
+	background-repeat: no-repeat;
+	display: inline-block;
+	overflow: hidden;
+	text-indent: -99999px;
+}
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+	background: url("../images/ui-bg_glass_55_fbf9ee_1x400.png") repeat-x scroll 50% 50% #FBF9EE;
+	border: 1px solid #FCEFA1;
+	color: #363636;
+}
+

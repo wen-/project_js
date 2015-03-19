@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="css/jq-tree.css" />
+    <script src="Scripts/jquery-2.0.1.min.js"></script>
+    <script src="Scripts/jquery.btechco.tree.js"></script>
+</head>
+<body>
+    <div id="treeview">
+    </div>
+</body>
+</html>
+<script>
+    $(document).ready(function () {
+        $("#treeview").btechcotree({
+            containerid: "treeview"
+            , url: "data_linear.xml"
+            , datatype: $treedatatype.Xml
+            , dataformat: $treedataformat.Linear
+            , class_node_collapse: "ui-icon-circle-plus"
+            , class_node_expand: "ui-icon-circle-minus"
+            , class_node_item: "ui-icon-clipboard"
+            , collapse_tree: false
+            , class_node_highlight: "ui-state-highlight"
+            , class_node_add: "ui-icon-plusthick"
+            , class_node_remove: "ui-icon-minusthick"
+            , show_button_check: false
+            , show_button_add: true
+            , show_button_remove: true
+            , node_remove_message: "Are you sure?"
+        });
+    });
+</script>

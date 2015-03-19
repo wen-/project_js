@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<script>
+var url = [
+"admin/plugins/baguettebox/baguettebox.min.js"
+,"admin/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"
+,"admin/plugins/bootstrap-daterangepicker/daterangepicker.js"
+,"admin/plugins/bootstrap-daterangepicker/moment.min.js"
+,"admin/plugins/bootstrap-fileinput/js/fileinput.js"
+,"admin/plugins/bootstrap-hover-dropdown/twitter-bootstrap-hover-dropdown.min.js"
+,"admin/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.js"
+,"admin/plugins/bootstrap-wysihtml5/wysihtml5-0.3.0.js"
+,"admin/plugins/bootstrap/js/bootstrap.min.js"
+,"admin/plugins/data-tables/DT_bootstrap.js"
+,"admin/plugins/data-tables/jquery.dataTables.js"
+,"admin/plugins/excanvas.min.js"
+,"admin/plugins/fullcalendar/fullcalendar/fullcalendar.min.js"
+,"admin/plugins/holder.js"
+,"admin/plugins/jquery-file-upload/js/jquery.fileupload.js"
+,"admin/plugins/jquery-migrate-1.2.1.min.js"
+,"admin/plugins/jquery-multi-select/js/jquery.multi-select.js"
+,"admin/plugins/jquery-slimscroll/jquery.slimscroll.min.js"
+,"admin/plugins/jquery-tags-input/jquery.tagsinput.js"
+,"admin/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js"
+,"admin/plugins/jquery-validation/dist/jquery.validate.min.js"
+,"admin/plugins/jquery.blockui.min.js"
+,"admin/plugins/jquery.cookie.min.js"
+,"admin/plugins/jquery.pulsate.min.js"
+,"admin/plugins/jquery.sparkline.min.js"
+,"admin/plugins/respond.min.js"
+,"admin/plugins/select2/select2.min.js"
+,"admin/plugins/uniform/jquery.uniform.min.js"
+,"admin/plugins/uploadify/jquery.uploadify.min.js"
+,"admin/scripts/ad.js"
+,"admin/scripts/ad_position.js"
+,"admin/scripts/app.js"
+,"admin/scripts/cache_manage.js"
+,"admin/scripts/datetime-picker.js"
+,"admin/scripts/fileprogress.js"
+,"admin/scripts/form-fileupload.js"
+,"admin/scripts/handlers.js"
+,"admin/scripts/image_type.js"
+,"admin/scripts/index.js"
+,"admin/scripts/muzhiwan.js/SimpleAjaxUploader.js"
+,"admin/scripts/muzhiwan.js/albumct-table-managed.js"
+,"admin/scripts/muzhiwan.js/article-table-managed.js"
+,"admin/scripts/muzhiwan.js/award-table-managed.js"
+,"admin/scripts/muzhiwan.js/commentadmin-table-managed.js"
+,"admin/scripts/muzhiwan.js/game-datetime-picker.js"
+,"admin/scripts/muzhiwan.js/gameadmin-table-managed.js"
+,"admin/scripts/muzhiwan.js/gametrailer-table-managed.js"
+,"admin/scripts/muzhiwan.js/gametype-table-managed.js"
+,"admin/scripts/muzhiwan.js/mobile-table-managed.js"
+,"admin/scripts/muzhiwan.js/mzw_config.js"
+,"admin/scripts/muzhiwan.js/prize-table-managed.js"
+,"admin/scripts/muzhiwan.js/search-table-managed.js"
+,"admin/scripts/muzhiwan.js/sensitive_filter.js"
+,"admin/scripts/muzhiwan.js/sign-table-managed.js"
+,"admin/scripts/muzhiwan.js/table-gameupdate-managed.js"
+,"admin/scripts/muzhiwan.js/userinfo-table-managed.js"
+,"admin/scripts/selectivizr-min.js"
+,"admin/scripts/swfupload.js"
+,"admin/scripts/sysmanage.js"
+,"admin/scripts/table-managed.js"
+,"admin/scripts/uploadify-operation.js"];
+
+url.sort();
+for(var i=0,l=url.length;i<l;i++){
+	if(url[i] == url[i+1]){
+		url.splice(i,1);
+		i--;
+		l=url.length;
+	}else{
+		//url[i] ='"'+ url[i]+'"'+'<br />';
+		url[i] = url[i]+'<br />';
+	}
+}
+document.body.innerHTML = url;
+</script>
+
+<br />
+
+公共模版脚本
+,admin/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js
+,admin/plugins/bootstrap-daterangepicker/daterangepicker.js
+,admin/plugins/bootstrap-daterangepicker/moment.min.js
+,admin/plugins/bootstrap-hover-dropdown/twitter-bootstrap-hover-dropdown.min.js
+,admin/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.js
+,admin/plugins/bootstrap-wysihtml5/wysihtml5-0.3.0.js
+,admin/plugins/bootstrap/js/bootstrap.min.js
+,admin/plugins/data-tables/DT_bootstrap.js
+,admin/plugins/data-tables/jquery.dataTables.js
+,admin/plugins/excanvas.min.js
+,admin/plugins/fullcalendar/fullcalendar/fullcalendar.min.js
+,admin/plugins/jquery-migrate-1.2.1.min.js
+,admin/plugins/jquery-slimscroll/jquery.slimscroll.min.js
+,admin/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js
+,admin/plugins/jquery-validation/dist/jquery.validate.min.js
+,admin/plugins/jquery.blockui.min.js
+,admin/plugins/jquery.cookie.min.js
+,admin/plugins/jquery.pulsate.min.js
+,admin/plugins/jquery.sparkline.min.js
+,admin/plugins/respond.min.js
+,admin/plugins/select2/select2.min.js
+,admin/plugins/uniform/jquery.uniform.min.js
+,admin/scripts/muzhiwan.js/mzw_config.js
+,admin/scripts/selectivizr-min.js
+
+
+
+控制器传参脚本
+,admin/plugins/baguettebox/baguettebox.min.js
+,admin/plugins/bootstrap-fileinput/js/fileinput.js
+,admin/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.js
+,admin/plugins/bootstrap-wysihtml5/wysihtml5-0.3.0.js
+,admin/plugins/holder.js
+,admin/plugins/jquery-file-upload/js/jquery.fileupload.js
+,admin/plugins/jquery-multi-select/js/jquery.multi-select.js
+,admin/plugins/jquery-tags-input/jquery.tagsinput.js
+,admin/plugins/uploadify/jquery.uploadify.min.js
+,admin/scripts/ad.js
+,admin/scripts/ad_position.js
+,admin/scripts/app.js
+,admin/scripts/cache_manage.js
+,admin/scripts/datetime-picker.js
+,admin/scripts/fileprogress.js
+,admin/scripts/form-fileupload.js
+,admin/scripts/handlers.js
+,admin/scripts/image_type.js
+,admin/scripts/index.js
+,admin/scripts/muzhiwan.js/SimpleAjaxUploader.js
+,admin/scripts/muzhiwan.js/albumct-table-managed.js
+,admin/scripts/muzhiwan.js/article-table-managed.js
+,admin/scripts/muzhiwan.js/award-table-managed.js
+,admin/scripts/muzhiwan.js/commentadmin-table-managed.js
+,admin/scripts/muzhiwan.js/game-datetime-picker.js
+,admin/scripts/muzhiwan.js/gameadmin-table-managed.js
+,admin/scripts/muzhiwan.js/gametrailer-table-managed.js
+,admin/scripts/muzhiwan.js/gametype-table-managed.js
+,admin/scripts/muzhiwan.js/mobile-table-managed.js
+,admin/scripts/muzhiwan.js/prize-table-managed.js
+,admin/scripts/muzhiwan.js/search-table-managed.js
+,admin/scripts/muzhiwan.js/sensitive_filter.js
+,admin/scripts/muzhiwan.js/sign-table-managed.js
+,admin/scripts/muzhiwan.js/table-gameupdate-managed.js
+,admin/scripts/muzhiwan.js/userinfo-table-managed.js
+,admin/scripts/swfupload.js
+,admin/scripts/sysmanage.js
+,admin/scripts/table-managed.js
+,admin/scripts/uploadify-operation.js
+
+
+整合
+插件核心脚本
+admin/plugins/baguettebox/baguettebox.min.js									//画廊插件
+,admin/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js
+,admin/plugins/bootstrap-daterangepicker/daterangepicker.js
+,admin/plugins/bootstrap-daterangepicker/moment.min.js							//以上三个是日期插件
+,admin/plugins/bootstrap-fileinput/js/fileinput.js								//文件输入框扩展带上传
+,admin/plugins/bootstrap-hover-dropdown/twitter-bootstrap-hover-dropdown.min.js	//悬停下拉列表
+,admin/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.js
+,admin/plugins/bootstrap-wysihtml5/wysihtml5-0.3.0.js							//以上两个为简易富文本编辑器
+,admin/plugins/bootstrap/js/bootstrap.min.js									//bootstrap核心库
+,admin/plugins/data-tables/DT_bootstrap.js
+,admin/plugins/data-tables/jquery.dataTables.js									//以上两个为表格插件
+,admin/plugins/fullcalendar/fullcalendar/fullcalendar.min.js					//日程表插件
+,admin/plugins/jquery-file-upload/js/jquery.fileupload.js						//文件上传
+,admin/plugins/jquery-multi-select/js/jquery.multi-select.js					//多选插件
+,admin/plugins/jquery-slimscroll/jquery.slimscroll.min.js						//滚动条特效（通过滚动切换内容）
+,admin/plugins/jquery-tags-input/jquery.tagsinput.js							//添加标签项
+,admin/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js							//jquery-ui定制
+,admin/plugins/jquery-validation/dist/jquery.validate.min.js					//表单验证库
+,admin/plugins/select2/select2.min.js											//模拟下拉框
+,admin/plugins/uniform/jquery.uniform.min.js									//表单美化
+,admin/plugins/uploadify/jquery.uploadify.min.js								//文件上传
+,admin/plugins/excanvas.min.js													//IE9以下支持绘图功能
+,admin/plugins/highstock														//绘制曲线图表
+,admin/plugins/holder.js														//图像点位渲染
+,admin/plugins/jquery-migrate-1.2.1.min.js										//jq1.9以上废弃方法修复
+,admin/plugins/jquery.blockui.min.js											//遮罩（模态窗口）
+,admin/plugins/jquery.cookie.min.js												//浏览器COOKIE操作
+,admin/plugins/jquery.pulsate.min.js											//为元素增加脉动效果(阴影、边框一闪一闪的效果)
+,admin/plugins/jquery.sparkline.min.js											//波谱图表（波浪形图表）插件
+,admin/plugins/respond.min.js													//IE9以下支持媒体查询
+,admin/plugins/kindeditor														//富文本编辑器（文章管理）
+
+业务层脚本
+,admin/scripts/ad.js
+,admin/scripts/ad_position.js
+,admin/scripts/app.js
+,admin/scripts/cache_manage.js
+,admin/scripts/datetime-picker.js
+,admin/scripts/fileprogress.js
+,admin/scripts/form-fileupload.js
+,admin/scripts/handlers.js
+,admin/scripts/image_type.js
+,admin/scripts/index.js
+,admin/scripts/login.js
+,admin/scripts/selectivizr-min.js
+,admin/scripts/swfupload.js
+,admin/scripts/sysmanage.js
+,admin/scripts/table-managed.js
+,admin/scripts/uploadify-operation.js
+,admin/scripts/muzhiwan.js/album-table-managed.js
+,admin/scripts/muzhiwan.js/albumct-table-managed.js
+,admin/scripts/muzhiwan.js/albumlt-table-managed.js
+,admin/scripts/muzhiwan.js/article-table-managed.js
+,admin/scripts/muzhiwan.js/award-table-managed.js
+,admin/scripts/muzhiwan.js/commentadmin-statistics-managed.js
+,admin/scripts/muzhiwan.js/commentadmin-table-managed.js
+,admin/scripts/muzhiwan.js/game-datetime-picker.js
+,admin/scripts/muzhiwan.js/gameadmin-table-managed.js
+,admin/scripts/muzhiwan.js/gamefirm-table-managed.js
+,admin/scripts/muzhiwan.js/gametrailer-table-managed.js
+,admin/scripts/muzhiwan.js/gamettags-table-managed.js
+,admin/scripts/muzhiwan.js/gametype-table-managed.js
+,admin/scripts/muzhiwan.js/mobile-table-managed.js
+,admin/scripts/muzhiwan.js/mzw_config.js
+,admin/scripts/muzhiwan.js/prize-table-managed.js
+,admin/scripts/muzhiwan.js/search-table-managed.js
+,admin/scripts/muzhiwan.js/sensitive_filter.js
+,admin/scripts/muzhiwan.js/sign-table-managed.js
+,admin/scripts/muzhiwan.js/SimpleAjaxUploader.js
+,admin/scripts/muzhiwan.js/table-gameupdate-managed.js
+,admin/scripts/muzhiwan.js/userinfo-table-managed.js
+
+
+
+bootstrap2-typeahead.js		自动补全，实现autocomplete
+
+</body>
+</html>

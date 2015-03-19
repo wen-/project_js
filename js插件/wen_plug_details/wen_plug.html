@@ -1,0 +1,343 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>应用商店--中国建设银行</title>
+<link type="text/css" rel="stylesheet" href="css/reset.css" />
+<script type="text/javascript" src="js/modernizr.js"></script>
+<script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+<script type="text/javascript" src="js/jquery.lazyload.min.js"></script>
+<script type="text/javascript" src="js/wen_plug_details.js"></script>
+<style>
+	body { 
+		color: #2A2A2A; 
+		font-size: 12px; 
+		font-family: 宋体,tahoma,arial,sans-serif; 
+	}
+	.demo_layout{
+		margin:100px auto;
+		padding-left:300px;
+	}
+	a { 
+		color: #333333; 
+	}
+	.pre_page, .next_page, .app_one_t, .star, .star1, .star_m, .star_m1, .popup_down a, .popup_app_n span, .popup_par, .popup_next, .checked_ico, .login_show, .reg_show, .step_next, .help_feedback a, .help_guide a { 
+		background-image: url('images/ccb_mobile_ico.png'); 
+		background-repeat: no-repeat; 
+	}
+	.app_l { 
+		display: inline; 
+	}
+	.app_l a:hover { 
+		text-decoration: none; 
+	}
+	.app_s { 
+		width: 233px; 
+		height: 198px; 
+		display: inline-block; 
+		overflow: hidden; 
+		vertical-align: top; 
+		position: relative; 
+		border: 1px solid #EAEAEA; 
+	}
+	.app_s_pt { 
+		height: 198px; 
+		width: 233px; 
+		background: url('images/bg_logo.jpg') no-repeat scroll center center rgb(255, 255, 255); 
+	}
+	.app_l .app_s_txt_t { 
+		font-size: 14px; 
+	}
+	.app_s_txt_n { 
+		font-size: 12px; 
+		color: rgb(92, 92, 92); 
+	}
+	.app_s_pic { 
+		height: 136px; 
+		width: 215px; 
+		display: block; 
+		margin: 0px 0px 0px 9px; 
+		padding-top: 8px; 
+	}
+	.app_s_txt { 
+		margin: 8px; 
+		line-height: 18px; 
+	}
+	.app_s_txt p { 
+		overflow: hidden; 
+		text-overflow: ellipsis; 
+		white-space: nowrap; 
+	}
+	.app_s_txt_t strong { 
+		font-weight: normal; 
+	}
+	.app_s_txt_d { 
+		font-size: 12px; 
+		color: rgb(51, 51, 51); 
+	}
+	.star_m { 
+		display: inline-block; 
+		height: 13px; 
+		width: 74px; 
+		overflow: hidden; 
+		vertical-align: top; 
+		background-position: -329px -18px; 
+	}
+	.star_m1 { 
+		width: 80%; 
+		background-position: -330px 0px; 
+	}
+	.app_s_details, .recomend_details, .reward_details { 
+		display: none; 
+	}
+	
+	/*--小星星--*/
+	.star{
+		position:absolute;
+		right: 30px;
+		bottom:15px;
+		/*position:relative;*/
+		display:inline-block;
+		z-index:101;
+		height:11px;
+		width:58px;
+		overflow:hidden;
+		background-position:-260px -17px;
+	}
+	.star1{
+		right: auto;
+		top: 0;
+		bottom:auto;
+		z-index:102;
+		width:80%;
+		/*position:absolute;*/
+		background-position:-261px -1px;
+		
+	}
+	/*--app信息2--*/
+	.app_s2{
+		/*display:none;
+		background-color: #F2F2F2;*/
+		bottom: 0px;
+		z-index:100;
+		height: 198px;
+		width: 233px;
+		position:absolute;
+	}
+	.app_s2 .app_s_txt_t strong {
+		font-weight: bold;
+	}
+	.app_s2 .app_s_txt_t,.app_s2 .app_s_txt_n{
+		padding-left:110px;
+	}
+	.app_s2 .app_s_txt_t{
+		padding-top:30px;
+		max-height:40px;
+		overflow:hidden;
+		_height:40px;
+		line-height:20px;
+	}
+	.app_s2 .app_s_txt_d{
+		padding:0 10px;
+		line-height:20px;
+		overflow:hidden;
+		height:60px;
+		font-size:12px;
+		color:#333;
+		position:absolute;
+		z-index:101;
+		top:90px;
+	}
+	.app_s_ico{
+		position:absolute;
+		height:58px;
+		width:58px;
+		top:20px;
+		left:30px;
+		z-index:101;
+	}
+	/*--3d样式（如果支持）--*/
+	
+	.csstransforms3d .details_3d_view{
+		position:relative;
+		width:233px;
+		height:198px;
+		
+		-webkit-transform-style: preserve-3d; 
+		-webkit-transition: -webkit-transform 800ms; 
+		-webkit-backface-visibility: hidden; 
+		-webkit-transform: translate3d(0px, 0px, 0px) rotate3d(0, 1, 0, 0deg); 
+		
+		-moz-transform-style: preserve-3d; 
+		-moz-transition: -moz-transform 800ms; 
+		-moz-backface-visibility: hidden; 
+		-moz-transform: translate3d(0px, 0px, 0px) rotate3d(0, 1, 0, 0deg); 
+		
+		-o-transform-style: preserve-3d; 
+		-o-transition: -o-transform 800ms; 
+		-o-backface-visibility: hidden; 
+		-o-transform: translate3d(0px, 0px, 0px) rotate3d(0, 1, 0, 0deg); 
+		
+		-ms-transform-style: preserve-3d; 
+		-ms-transition: -ms-transform 800ms; 
+		-ms-backface-visibility: hidden; 
+		-ms-transform: translate3d(0px, 0px,0px) rotate3d(0, 1, 0, 0deg); 
+	}
+	
+	.csstransforms3d .details_3d_front{
+		position: absolute;
+		z-index:101;
+		-webkit-backface-visibility:hidden;
+		-moz-backface-visibility: hidden; 
+		-o-backface-visibility: hidden; 
+		-ms-backface-visibility: hidden; 
+	}
+	.csstransforms3d .details_3d_versa{
+		position:absolute;
+		z-index:100;
+		-webkit-backface-visibility:hidden;
+		-moz-backface-visibility: hidden; 
+		-o-backface-visibility: hidden; 
+		-ms-backface-visibility: hidden; 
+		-webkit-transform: translate3d(0px, 0px, 1px) rotate3d(0, 1, 0, 180deg);
+		-moz-transform: translate3d(0px, 0px, 1px) rotate3d(0, 1, 0, 180deg);
+		-o-transform: translate3d(0px, 0px, 1px) rotate3d(0, 1, 0, 180deg);
+		-ms-transform: translate3d(0px, 0px, 1px) rotate3d(0, 1, 0, 180deg);
+	}
+	.no-preserve3d .details_3d_front{
+		-webkit-transition: -webkit-transform 600ms;
+		-moz-transition: -moz-transform 600ms;
+		-o-transition: -o-transform 600ms;
+		-ms-transition: -ms-transform 600ms; 
+		-webkit-transform: translate3d(0px, 0px, 1px) rotate3d(0, 1, 0, 0deg);
+		-moz-transform: translate3d(0px, 0px, 1px) rotate3d(0, 1, 0, 0deg);
+		-o-transform: translate3d(0px, 0px, 1px) rotate3d(0, 1, 0, 0deg);
+		-ms-transform: translate3d(0px, 0px, 1px) rotate3d(0, 1, 0, 0deg);
+	}
+	.no-preserve3d .details_3d_versa{
+		display:block;
+		-webkit-transition: -webkit-transform 600ms;
+		-moz-transition: -moz-transform 600ms;
+		-o-transition: -o-transform 600ms;
+		-ms-transition: -ms-transform 600ms; 
+		-webkit-transform: translate3d(0px, 0px, 1px) rotate3d(0, 1, 0, 90deg);
+		-moz-transform: translate3d(0px, 0px, 1px) rotate3d(0, 1, 0, 90deg);
+		-o-transform: translate3d(0px, 0px, 1px) rotate3d(0, 1, 0, 90deg);
+		-ms-transform: translate3d(0px, 0px, 1px) rotate3d(0, 1, 0, 90deg);
+	}
+	.details_3d_versa{
+		background:url(images/loading.gif) no-repeat center center #f2f2f2;
+	}
+	.details_3d_front{
+		background-color:#fff;
+	}
+	.csstransforms3d .details_3d_front{
+		z-index:100;
+	}
+	
+</style>
+</head>
+<body>
+<div class="demo_layout">
+<div class="app_l">
+    <a href="#">
+        <div class="app_s details_3d">
+            <div class="app_s_pt">
+                <img class="app_s_pic load_ing" data-original="images/app_ico6.jpg" alt="建行信用卡申请" />
+                <div class="app_s_txt">
+                    <p class="app_s_txt_t details_3d_T"><strong>建行信用卡申请</strong></p>
+                    <p class="app_s_txt_n"><span>353534次下载</span></p>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+</div>
+
+<div class="demo_layout">
+<div class="app_l">
+    <a href="#">
+        <div class="details_3d" style="width:233px;height:198px;overflow:hidden;position:relative;">
+            <div class="">
+                <img class="load_ing" data-original="images/app_ico6.jpg" alt="建行信用卡申请" />
+                <div class="">
+                    <p class="details_3d_T"><strong>建行信用卡申请</strong></p>
+                    <p class=""><span>353534次下载</span></p>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+</div>
+
+
+<!--推荐应用信息-->
+<div class="app_s2" style="display:none;">
+    <span class="star"><span class="star star1" style="width:50%;"></span></span>
+    <img class="app_s_ico" src="images/ico0.png" alt="" />
+    <p class="app_s_txt_t">
+        <strong>广州交罚</strong>
+    </p>
+    <p class="app_s_txt_n">
+        <span>353534次下载</span>
+    </p>
+    <p class="app_s_txt_d">
+        我行学生惠手机客户端紧跟移动互联网风潮，主打垂直领域服务推送移动移动，以学生...
+    </p>
+</div>
+<!--推荐应用信息end-->
+
+                      
+<script type="text/javascript">
+$(function() {
+	
+$(".app_l").wen_plug_details({
+	star_fn:function(elm){
+		getdata(elm);
+	}
+});
+function getdata(elm){
+	
+	$.ajax({
+		type: "POST",
+		url: "json/wen_plug_details.json",
+		dataType: "json",
+		beforeSend:function(){
+			
+		},
+		error: function(){
+			console.log("请求数据失败!");
+			return false;
+		},
+		success: function(json){
+			elm.find(".details_3d_versa").css({"background-image":"none"});
+			elm.find(".details_3d_versa").html(
+			'<div class="app_s2 absolute">\
+				<span class="star"><span class="star star1" style="'+json.appstar+'%"></span></span>\
+				<img class="app_s_ico" src="'+json.appico+'" alt="'+json.appname+'" />\
+				<p class="app_s_txt_t">\
+					<strong>'+json.appname+'</strong>\
+				</p>\
+				<p class="app_s_txt_n">\
+					<span>'+json.appdowns+'次下载</span>\
+				</p>\
+				<p class="app_s_txt_d">'+json.appdetails+'</p>\
+			</div>'
+			)
+		}
+	});
+};
+
+$("img.load_ing").lazyload({
+	failure_limit : 10,
+	effect: "fadeIn",
+	event_obj: ".popup_app_n span"
+});
+  
+});
+</script>
+</body>
+</html>

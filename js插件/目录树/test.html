@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/jq-tree.css" />
+    <script src="Scripts/jquery-1.5.2.min.js"></script>
+    <script src="Scripts/jquery.btechco.tree.js"></script>
+    <style type="text/css">
+	body{
+		background-color:#ccc;
+	}
+	#treeview{
+		width:600px;
+		margin:100px auto;
+	}
+	#treeview ul ul li{
+		
+	}
+	</style>
+</head>
+<body>
+    <div id="treeview">
+    </div>
+    <div>
+        <button id="btn1">Test-1</button>
+        <button id="btn2">Test-2</button>
+    </div>
+</body>
+</html>
+<script>
+    $(document).ready(function () {
+        var data_obj = [{
+            "root": [
+                {
+                    "id": 1,
+                    "name": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                    "parentid": 0,
+                    "href": "http://google.com"
+                },
+                {
+                    "id": 2,
+                    "name": "Proin dignissim commodo elit, quis pretium metus volutpat at.",
+                    "parentid": 1
+                },
+                {
+                    "id": 3,
+                    "name": "Quisque tempor dui in magna ullamcorper ornare.",
+                    "parentid": 1
+                },
+                {
+                    "id": 4,
+                    "name": "Morbi malesuada lorem dignissim sapien molestie varius.",
+                    "parentid": 2
+                },
+                {
+                    "id": 5,
+                    "name": "Integer et justo ac nunc viverra elementum vitae at eros.",
+                    "parentid": 3
+                },
+                {
+                    "id": 6,
+                    "name": "In feugiat ante sit amet orci pulvinar sit amet vehicula enim ornare.",
+                    "parentid": 4
+                },
+                {
+                    "id": 7,
+                    "name": "Cras at orci turpis, sed sodales velit.",
+                    "parentid": 5
+                },
+                {
+                    "id": 8,
+                    "name": "Cras scelerisque urna vel mi condimentum ac feugiat libero iaculis.",
+                    "parentid": 7
+                },
+                {
+                    "id": 9,
+                    "name": "Ut pharetra sem non est facilisis iaculis.",
+                    "parentid": 7
+                },
+                {
+                    "id": 10,
+                    "name": "Praesent venenatis ante iaculis enim semper iaculis.",
+                    "parentid": 1
+                },
+                {
+                    "id": 11,
+                    "name": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                    "parentid": 0,
+                    "href": "http://google.com"
+                },
+                {
+                    "id": 12,
+                    "name": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                    "parentid": 0,
+                    "href": "http://google.com"
+                },
+                {
+                    "id": 13,
+                    "name": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                    "parentid": 0,
+                    "href": "http://google.com"
+                },
+                {
+                    "id": 14,
+                    "name": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                    "parentid": 11,
+                    "href": "http://google.com"
+                },
+                {
+                    "id": 15,
+                    "name": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                    "parentid": 12,
+                    "href": "http://google.com"
+                },
+                {
+                    "id": 16,
+                    "name": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                    "parentid": 13,
+                    "href": "http://google.com"
+                }
+            ]
+        }];
+
+        $("#btn1").click(function () {
+            Clear();
+
+            $("#treeview").btechcotree({
+                containerid: "treeview"
+                , dataset: data_obj
+                , datatype: $treedatatype.Json
+                , dataformat: $treedataformat.Linear
+                , class_node_collapse: "ui-icon-circle-plus"
+                , class_node_expand: "ui-icon-circle-minus"
+                , class_node_item: "ui-icon-clipboard"
+                , collapse_tree: false
+                , class_node_highlight: "ui-state-highlight"
+                , class_node_add: "ui-icon-plusthick"
+                , class_node_remove: "ui-icon-minusthick"
+                , show_button_check: true
+                , show_button_add: false
+                , show_button_remove: true
+                , node_remove_message: "Are you sure?"
+                , onstart: function () {
+                    console.log("onstart------------------1111");
+                }
+                , onend: function () {
+                    console.log("onend------------------------2222");
+                }
+                , onprocessingstart: function (node) {
+                    console.log("onprocessingstart--------------------3333");
+                }
+                , onprocessingcomplete: function (node) {
+                    console.log("onprocessingcomplete----------------------4444");
+                }
+                , onprocessingerror: function (xhr, ajaxOptions, thrownError) {
+                    console.log("Ajax Error------------------5");
+                    console.log(xhr+"------------------6");
+                    console.log(ajaxOptions+"------------------7");
+                    console.log(thrownError+"------------------8");
+                }
+                , onbeforedataconversion: function (node) {
+                    console.log("onbeforedataconversion---------------------9");
+                }
+                , onafterdataconversion: function (node) {
+                    console.log("onafterdataconversion----------------------10");
+                }
+                , onrenderstart: function (node) {
+                    console.log("onrenderstart----------------------11");
+                }
+                , onrendercomplete: function (node) {
+                    console.log("onrendercomplete--------------12");
+                }
+                , onbeforenodeinsert: function (node) {
+                    console.log("onbeforenodeinsert--------------13");
+                }
+                , onafternodeinsert: function (node) {
+                    console.log("onafternodeinsert------------------14");
+                }
+                , onselectednode: function (node, sender) {
+                    console.log("onselectednode----------------15");
+                }
+            });
+        });
+
+        $("#btn2").click(function () {
+            Clear();
+
+            $("#treeview").btechcotree({
+                containerid: "treeview"
+               , dataset: data_obj
+               , datatype: $treedatatype.Json
+               , dataformat: $treedataformat.Linear
+            });
+        });
+
+        function Clear() {
+            $("#treeview").empty();
+        }
+    });
+</script>
+
