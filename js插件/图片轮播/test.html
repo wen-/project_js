@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>图片切换</title>
+<link rel="stylesheet" href="../../CSS样式/reset.css" />
+<script type="text/javascript" src="../../JQ版本/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="wen_play.js"></script>
+<script>
+$(function(){
+	$("#css2").click(function(){
+		$(".greenBox").css("top","100px");
+	});
+	$("#css3").click(function(){
+		$(".redBox").css("transform","translate(0,100px)");
+	});
+	
+});
+</script>
+<style>
+.greenBox{
+	position:absolute;
+	top:0;
+	height:200px;
+	width:200px;
+	background-color:green;
+}
+.redBox{
+	top:0;
+	left:300px;
+	position:absolute;
+	height:200px;
+	width:200px;
+	background-color:red;
+}
+.box{
+	width:500px;
+	height:400px;
+	margin:10px auto 200px;
+	position:relative;
+}
+.btn{
+	text-align:center;
+}
+</style>
+</head>
+<body>
+<div class="box">
+	<div class="greenBox"></div>
+	<div class="redBox"></div>
+</div>
+<div class="btn">
+<button type="button" id="css2">css2测试</button>
+<button type="button" id="css3">css3测试</button>
+</div>
+</body>
+</html>

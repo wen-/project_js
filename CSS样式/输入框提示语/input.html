@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>加载效果</title>
+<style>
+
+form .form-element {
+	position: relative;
+	width:49%;
+}
+form .box {
+	width: 100%;
+	border: 1px solid #000;
+	border: 1px solid rgba(255, 255, 255, 0);
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+	padding: 0.75em;
+	background:transparent;
+	background: rgba(0, 0, 0, 0.075);
+	box-sizing: border-box;
+}
+form label {
+	display: inline-block;
+	position: absolute;
+	left: 1em;
+	top: 50%;
+	font-size: 0.9rem;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	z-index: -1;
+	color: rgba(0, 0, 0, 0.5);
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+	margin-right: 2em;
+	margin-left: 0;
+}
+form input:focus:invalid, form textarea:focus:invalid {
+	border-color: #C23A2C;
+}
+form .form-element input:focus, form .form-element textarea:focus {
+	outline: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+form .box:focus {
+	background: white;
+}
+form .form-element input:focus:invalid ~ label, form .form-element textarea:focus:invalid ~ label {
+	background: #C23A2C;
+}
+form .form-element input:focus ~ label, form .form-element textarea:focus ~ label {
+	background: #1795c5;
+	color: white;
+	display: inline;
+	left: auto;
+	padding: 0 0.2em;
+	right: -0.025em;
+	top: 0;
+	z-index: 2;
+	margin-right: 0;
+	margin-left: 2em;
+	display: block !important;
+}
+form input:focus:valid, form textarea:focus:valid {
+	border-color: #2DCC70;
+}
+form .form-element input:focus:valid ~ label, form .form-element textarea:focus:valid ~ label {
+	background: #2DCC70;
+}
+</style>
+</head>
+<body style="background:#ccc;">
+    <form>
+    <div class="form-element">
+        <input type="text" class="box" required>
+        <label>Name</label>
+    </div>
+    </form>
+</body>
+</html>
