@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>加载效果</title>
+<style>
+/*
+#
+# 03. Pre-loader
+----------------------------------------------------------------------*/
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 99;
+}
+.preloader .span-group {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -25px;
+  transform: translate(-50%);
+  -webkit-transform: translate(-50%);
+  -ms-transform: translate(-50%);
+}
+.preloader span {
+  display: block;
+  bottom: 0px;
+  width: 9px;
+  height: 5px;
+  position: absolute;
+  animation: preloader 1.5s infinite ease-in-out;
+  -webkit-animation: preloader 1.5s infinite ease-in-out;
+  -moz-animation: preloader 1.5s infinite ease-in-out;
+  -o-animation: preloader 1.5s infinite ease-in-out;
+}
+.preloader span:nth-child(2) {
+  left: 11px;
+  animation-delay: .2s;
+  -webkit-animation-delay: .2s;
+  -moz-animation-delay: .2s;
+  -o-animation-delay: .2s;
+}
+.preloader span:nth-child(3) {
+  left: 22px;
+  animation-delay: .4s;
+  -webkit-animation-delay: .4s;
+  -moz-animation-delay: .4s;
+  -o-animation-delay: .4s;
+}
+.preloader span:nth-child(4) {
+  left: 33px;
+  animation-delay: .6s;
+  -webkit-animation-delay: .6s;
+  -moz-animation-delay: .6s;
+  -o-animation-delay: .6s;
+}
+.preloader span:nth-child(5) {
+  left: 44px;
+  animation-delay: .8s;
+  -webkit-animation-delay: .8s;
+  -moz-animation-delay: .8s;
+  -o-animation-delay: .8s;
+}
+/*
+#
+# Preloader
+----------------------------------------------------------------------*/
+.preloader {
+  background: #ffffff;
+}
+.preloader span{
+    background:#d0d0d0;
+}
+@keyframes preloader {
+    0% {height:5px;transform:translateY(0px);background:#686868;}
+    25% {height:30px;transform:translateY(15px);background:#2e7d32;}
+    50% {height:5px;transform:translateY(0px);background:#686868;}
+    100% {height:5px;transform:translateY(0px);background:#686868;}
+}
+@-webkit-keyframes preloader {
+    0% {height:5px;transform:translateY(0px);background:#686868;}
+    25% {height:30px;transform:translateY(15px);background:#2e7d32;}
+    50% {height:5px;transform:translateY(0px);background:#686868;}
+    100% {height:5px;transform:translateY(0px);background:#686868;}
+}
+@-moz-keyframes preloader {
+    0% {height:5px;transform:translateY(0px);background:#686868;}
+    25% {height:30px;transform:translateY(15px);background:#2e7d32;}
+    50% {height:5px;transform:translateY(0px);background:#686868;}
+    100% {height:5px;transform:translateY(0px);background:#686868;}
+}
+@-o-keyframes preloader {
+    0% {height:5px;transform:translateY(0px);background:#686868;}
+    25% {height:30px;transform:translateY(15px);background:#2e7d32;}
+    50% {height:5px;transform:translateY(0px);background:#686868;}
+    100% {height:5px;transform:translateY(0px);background:#686868;}
+}
+</style>
+</head>
+
+<body>
+<div class="preloader">
+    <div class="status">&nbsp;</div>
+    <div class="span-group">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+</body>
+</html>
