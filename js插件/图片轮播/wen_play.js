@@ -99,7 +99,7 @@
 		var defaultVal = {
 			show_n : "1",	
 			play_list:".play_list",			//定义第一层的LI列表，这样子项里面就算有其它的LI也不会受影响	
-			page_show:"pre_next",			//页码显示方式决定了切换方式，"pre_next"/"num"/"num_opacity"
+			page_show:"pre_next",			//页码显示方式决定了切换方式，"pre_next"/"num"/"num_opacity/mixture"
 			pre_page:"wen_pre_page",		//上面选择"pre_next"才要设置上按钮的样式
 			next_page:"wen_next_page",		//上面选择"pre_next"才要设置下按钮的样式
 			hover:false,					//上面选择"pre_next"才要设置是否隐藏上下按钮，鼠标移到其上显示
@@ -112,7 +112,7 @@
 		var obj = $.extend(defaultVal,options);
 		return this.each(function(){
 			var $this = $(this);
-			var i = 1,n=0,autoplay,i_auto = 1;
+			var i = 1,n=0,autoplay,i_auto = 0;
 			var $li = $this.find(obj.play_list);
 			var $li_1 = $li.eq(0);
 			var li_w = $li_1.outerWidth(true);
@@ -122,15 +122,30 @@
 			if(li_n <= obj.show_n){
 				return false;
 			};
-			if(obj.page_show == "pre_next"){
+			if(obj.page_show == "pre_next" || obj.page_show == "mixture"){
 				var page_html = '<div class="'+obj.pre_page+'">pre</div><div class="'+obj.next_page+'">next</div>';
 				$this.append(page_html);
 				
 				$this.children('.'+obj.pre_page).click(function(){
-					play.pre();
+					if(obj.page_show == "mixture"){
+						if(i_auto-1 < 0){i_auto = li_n-1;}else{i_auto--};
+						play.num(i_auto);
+						//console.log(i_auto);
+						$this.children(".wen_page").children("span").eq(i_auto).addClass("current").siblings().removeClass("current");
+					}else{
+						play.pre();
+					}
+					
 				});
 				$this.children('.'+obj.next_page).click(function(){
-					play.next();
+					if(obj.page_show == "mixture"){
+						if(i_auto+1 >= li_n){i_auto = 0;}else{i_auto++};
+						play.num(i_auto);
+						//console.log(i_auto);
+						$this.children(".wen_page").children("span").eq(i_auto).addClass("current").siblings().removeClass("current");
+					}else{
+						play.next();
+					}
 				});
 				if(obj.hover){
 					$(this).children('.'+obj.pre_page).hide();
@@ -143,7 +158,8 @@
 						$(this).children('.'+obj.next_page).fadeOut();
 					});
 				};
-			}else if(obj.page_show == "num" || obj.page_show == "num_opacity"){
+			}
+			if(obj.page_show == "num" || obj.page_show == "num_opacity" || obj.page_show == "mixture"){
 				var page = [];
 				for(var i=0;i<li_n;i++){
 					if(i>0){
@@ -154,14 +170,12 @@
 				}
 				var page_html = '<div class="wen_page">'+page.join("")+'</div>';
 				$this.append(page_html);
-				//if(obj.page_show == "num_opacity"){
-					$li.css({"position":"absolute"}).hide().eq(0).show();
-				//};
+				$li.css({"position":"absolute"}).hide().eq(0).show();
 				$this.children(".wen_page").children("span").click(function(){
 					i_auto = $(this).index();
 					if(! $li.is(":animated")){
 						$(this).addClass("current").siblings().removeClass("current");
-						if(obj.page_show == "num"){
+						if(obj.page_show == "num" || obj.page_show == "mixture"){
 							play.num(i_auto);
 						}else{
 							play.num_opacity(i_auto);
@@ -177,7 +191,7 @@
 					_play = false;
 				},function(){
 					_play = true;
-					if(obj.page_show == "pre_next"){
+					if(obj.page_show == "pre_next" || obj.page_show == "mixture"){
 						autoplay = window.setInterval(function(){
 							$this.children('.'+obj.next_page).trigger("click");
 						},obj.autospeed);

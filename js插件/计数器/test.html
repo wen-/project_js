@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>图片切换</title>
+<link rel="stylesheet" href="../../CSS样式/reset.css" />
+<script type="text/javascript" src="../../JQ版本/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="jquery.countTo.js"></script>
+<script>
+$(function(){
+	$("#num").countTo({
+		
+	});
+	
+});
+</script>
+<style>
+#countBox{
+	height:200px;
+	width:200px;
+	margin:2em auto;
+	text-align:center;
+	line-height:200px;
+	font-size:3em;
+}
+</style>
+</head>
+<body>
+<div id="countBox">
+	<span id="num" data-from="100" data-to="10" data-speed="15000">0</span>
+</div>
+</body>
+</html>
