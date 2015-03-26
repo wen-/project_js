@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>按钮效果</title>
+<style>
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+h3 {
+	font-size: 18px;
+	line-height: 27px;
+	letter-spacing: 3.5px;
+	margin-bottom: 12px;
+}
+img {
+	vertical-align: middle;
+}
+a {
+	color: #bca480;
+	text-decoration: none;
+}
+.animated {
+	-webkit-animation-duration: 1.2s;
+	animation-duration: 1.2s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+.wow {
+	visibility: hidden;
+}
+.fadeInDown {
+	-webkit-animation-name: fadeInDown;
+	animation-name: fadeInDown;
+}
+.wow.animated {
+	visibility: visible;
+}
+.live-preview-item {
+	position: relative;
+	text-align: center;
+	margin-bottom: 50px;
+}
+.live-preview-item-thumb {
+	margin-bottom: 20px;
+	background: no-repeat top+10px center;
+	-webkit-transition: background 4s;
+	transition: background 4s;
+}
+.btn {
+	display: inline-block;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	position: relative;
+	z-index: 2;
+	text-transform: uppercase;
+	padding: 15px 20px;
+	overflow: hidden;
+	-webkit-transition: all 0.2s;
+	transition: all 0.2s;
+}
+.btn-white {
+	border: 1px solid #bca480;
+	background-color: transparent;
+}
+.fa {
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	transform: translate(0, 0);
+}
+.btn-white i {
+	border-left-color: #bca480;
+}
+.btn i {
+	display: inline-block;
+	line-height: 43px;
+	text-align: center;
+	border-left: 1px solid #fff;
+	padding-left: 20px;
+	margin: -15px 0 -15px 20px;
+}
+.live-preview-item:hover .live-preview-item-thumb {
+	background-position: bottom center;
+}
+.btn-white:hover {
+	border-color: #bca480;
+	background-color: transparent;
+	color: #fff;
+}
+.btn:hover:after {
+	width: 101%;
+	opacity: 1;
+}
+.btn-white:after {
+	background-color: #bca480;
+}
+.btn:after {
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 50%;
+	width: 0;
+	height: 100%;
+	opacity: 0;
+	content: "";
+	-webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	transform: translateX(-50%);
+	-webkit-transition: all 0.2s;
+	transition: all 0.2s;
+}
+:after, :before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.btn-white i {
+	border-left-color: #bca480;
+}
+.fa-arrow-right:before {
+	content: "→";
+}
+</style>
+<!--[if IE 8]>
+<style>
+
+
+</style>
+<![endif]-->
+</head>
+<body>
+    <div class="col-sm-6 col-md-3">	
+        <div class="live-preview-item wow fadeInDown animated" data-wow-delay="0.3s" style="visibility: visible; -webkit-animation-delay: 0.3s;">
+            <h3>Classic Home <br>Image Background</h3>
+            <br>							
+            <div class="live-preview-item-thumb" style="background-image:url(images/classic-home-image-bg.png)">
+                <p><a target="_blank" href="#"><img src="images/bg-preview-item.png" alt=""></a></p>
+            </div><!-- end .live-preview-item -->
+            <p><a target="_blank" class="btn btn-white" href="#">preview <i class="fa fa-arrow-right"></i></a></p>
+        </div><!-- end .live-preview-item -->
+    </div>
+</body>
+</html>
